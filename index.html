@@ -37,7 +37,7 @@
                 <!--end navbar-->
             </header>
             <!--end #header-->
-
+            
             <!--CONTENT *********************************************************************************************-->
             <main id="main-content">
                 <div class="ts-content-wrapper">
@@ -52,8 +52,23 @@
                                 <form action="https://api.web3forms.com/submit" method="POST">
 
                                 <input type="hidden" name="access_key" value="20cb19f9-4f46-48b5-82a3-fbea5bb0826a">
-                                <div class="row"> <div class="col-md-9"> <div class="form-group"> <input type="email" class="form-control" id="email-subscribe" aria-describedby="subscribe" name="email" placeholder="Enter Work Email" required style="margin-bottom: 20px; width: 100%; height: 40px; border-radius: 5px;"> <textarea name="message" class="form-control" placeholder="Enter Message" required style="margin-bottom: 20px; width: 100%; height: 80px; border-radius: 5px;"></textarea> <div class="h-captcha" data-captcha="true" style="margin-bottom: 20px;"></div> <button type="submit" class="btn btn-primary" style="width: 100%; height: 40px; border-radius: 5px;">Submit</button> </div> </div> </div>
-                                <!--end row-->
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="email-subscribe" aria-describedby="subscribe" name="email" placeholder="Enter Work Email" required style="margin-bottom: 20px; width: 100%; height: 40px; border-radius: 5px;">
+                                            <textarea name="message" class="form-control" placeholder="Enter Message" required style="margin-bottom: 20px; width: 100%; height: 80px; border-radius: 5px;"></textarea>
+                                            <div class="h-captcha" data-captcha="true" style="margin-bottom: 20px; display: none;" id="captcha"></div>
+                                            <button type="submit" class="btn btn-primary" style="width: 100%; height: 40px; border-radius: 5px;">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <script>
+                                document.getElementById('email-subscribe').addEventListener('focus', function() {
+                                    document.getElementById('captcha').style.display = 'block';
+                                });
+                                </script>
+                                                                <!--end row-->
                             </form>
                             <script src="https://web3forms.com/client/script.js" async defer></script>
 
